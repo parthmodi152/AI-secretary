@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = ""
+authors = ["Ravi Riley <raviriley@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = {extras = ["standard"], version = "^0.115.2"}
+twilio = "^9.3.3"
+websocket-client = "^1.8.0"
+google = "^3.0.0"
+google-api-python-client = "^2.149.0"
+google-auth-httplib2 = "^0.2.0"
+google-auth-oauthlib = "^1.2.1"
+pytz = "^2024.2"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.6.9"
+mypy = "^1.11.2"
+pytest = "^8.3.3"
+
+[tool.mypy]
+python_version = "3.10"
+disallow_untyped_defs = true
+check_untyped_defs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+
+[tool.poetry.scripts]
+lint = "scripts.scripts:lint"
+l = "scripts.scripts:lint"
+format = "scripts.scripts:format_code"
+f = "scripts.scripts:format_code"
+format-lint = "scripts.scripts:format_and_lint"
+fl = "scripts.scripts:format_and_lint"
+test = "scripts.scripts:test"
+t = "scripts.scripts:test"
+format-lint-test = "scripts.scripts:format_lint_test"
+flt = "scripts.scripts:format_lint_test"
+dev = "scripts.scripts:dev_server"
+d = "scripts.scripts:dev_server"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
